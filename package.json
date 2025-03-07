@@ -9,7 +9,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prepare": "cd .. && husky /.husky"
+    "prepare": "husky install"
   },
   "dependencies": {
     "react": "^19.0.0",
@@ -41,6 +41,9 @@
     "vite": "^6.2.0"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --fix"
+    "**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
